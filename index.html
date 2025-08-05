@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 ASYNCHRONOUS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="relative">
+    <!-- 🔄 Loader Overlay (body-এর ভিতরেই থাকবে) -->
+    <div
+      id="body-loader"
+      class="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-white"
+    >
+      <span class="loading loading-bars loading-lg text-primary"></span>
+    </div>
+    <header>
+      <nav>
+        <div class="navbar bg-base-100 justify-around border-b">
+          <div class="flex gap-2">
+            <img class="h-6 w-8" src="./images/logo.webp" alt="" />
+            <a class="text-xl">Peddy</a>
+          </div>
+          <div class="hidden md:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Right: Profile & Dropdown Toggle -->
+          <div class="flex items-center gap-4">
+            <!-- Dropdown (visible on small screens only) -->
+            <div class="dropdown dropdown-end md:hidden">
+              <label tabindex="0" class="btn btn-ghost">
+                <!-- Menu Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Profile Icon -->
+            <div class="p-2 rounded-full border">
+              <img
+                class="size-[24px]"
+                src="https://img.icons8.com/?size=100&id=47375&format=png&color=13131370"
+                alt="profile"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="mb-[100px] px-2 lg:px-0">
+          <div class="lg:w-[752px] mx-auto text-center mb-6">
+            <h2 class="text-[#13131360]">Bringing Families Together ❤️‍🔥</h2>
+            <h1 class="text-7xl font-black">
+              Your Path to Adoption Starts Here
+            </h1>
+          </div>
+          <div class="lg:w-[752px] mx-auto text-center">
+            <p>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a.
+            </p>
+            <button class="mt-8 btn">View More</button>
+          </div>
+          <div class="mx-auto md:w-[803px] h-[450px] mt-12">
+            <img
+              class="h-full w-full object-contain"
+              src="./images/pet.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="max-w-[1320px] text-center px-2">
+          <div class="max-w-[636px] mx-auto">
+            <h1 class="text-[40px] mb-6 font-black">Adopt Your Best Friend</h1>
+            <p class="text-[#13131370]">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a.
+            </p>
+          </div>
+          <!-- animale catagories  -->
+          <div
+            id="animale-catagories"
+            class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 px-2 md:px-0"
+          ></div>
+        </div>
+      </section>
+
+      <!-- //sort section  -->
+      <section>
+        <div class="flex justify-between my-8 px-2">
+          <h2 class="font-black">Best Deal For you</h2>
+          <button
+            onclick="sortAnimalPrice()"
+            class="btn text-xl bg-[#0E7A81] text-white"
+          >
+            Sort by Price
+          </button>
+        </div>
+      </section>
+      <section class="py-8 px-2">
+        <!-- all animale container  -->
+        <div class="grid grid-cols-4 md:gap-6 gap-1 items-start">
+          <!-- animale contenst  -->
+          <div
+            id="animale-container"
+            class="col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-[460px] w-full overflow-scroll rounded-xl border"
+          >
+            <!-- Loader flex dite hobe -->
+          </div>
+
+          <!-- //like container  -->
+          <div
+            id="like-animale"
+            class="col-span-1 grid grid-cols-1 md:grid-cols-2 gap-4 border rounded-xl h-[460px] w-full overflow-scroll"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Animals details  -->
+      <section>
+        <button
+          id="showModalData"
+          class="btn hidden"
+          onclick="my_modal_5.showModal()"
+        >
+          open modal
+        </button>
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box lg:max-w-3xl lg:max-h-[500px]">
+            <div id="AnimalesDatails"></div>
+          </div>
+        </dialog>
+      </section>
+
+      <!-- adapt modal  -->
+      <section>
+        <dialog id="my_modal_3" class="modal">
+          <div class="modal-box text-center">
+            <img
+              class="size-14 mx-auto"
+              src="https://img.icons8.com/?size=100&id=kRZicCB1E8B8&format=png&color=000000"
+              alt=""
+            />
+            <h1 class="text-primary text-3xl font-bold">CONGREATS</h1>
+            <h2 class="text-primary text-xl">
+              Adption process in start for your pat
+            </h2>
+            <p
+              id="adopt-countdown"
+              class="text-4xl py-4 text-red-500 font-bold"
+            >
+              3
+            </p>
+          </div>
+        </dialog>
+      </section>
+    </main>
+    <footer>
+      <div
+        class="footer md:flex lg:flex md:justify-around bg-[#131313] text-white text-base-content px-2 py-5 md:py-10"
+      >
+        <nav>
+          <div class="footer-title flex gap-3">
+            <img class="w-7 h-6" src="./images/logo.webp" alt="" /><span
+              >Peddy</span
+            >
+          </div>
+          <a class="link link-hover"
+            >Location: av. Washington 165, NY CA <br />54003</a
+          >
+          <a class="link link-hover">Phone: +31 85 964 47 25</a>
+          <a class="link link-hover">Email: info@yourdomain.com</a>
+          <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+          <a class="link link-hover">
+            <nav class="flex">
+              <a class="mr-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="mr-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="mr-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  ></path>
+                </svg>
+              </a>
+            </nav>
+          </a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Useful Links</h6>
+          <a class="link link-hover"> Home</a>
+          <a class="link link-hover"> About Us</a>
+          <a class="link link-hover">Animals</a>
+          <a class="link link-hover">Foundation</a>
+          <a class="link link-hover">Contact</a>
+        </nav>
+
+        <form class="w-[240px]">
+          <h6 class="footer-title">Drop a Message</h6>
+          <fieldset class="form-control w-[240px]">
+            <label class="label">
+              <span class="label-text text-white"
+                >Enter your email address</span
+              >
+            </label>
+            <div>
+              <input
+                type="text"
+                placeholder="Enter your email"
+                class="input input-bordered w-full mb-4 text-gray-600"
+              />
+              <div>
+                <button
+                  type="submit"
+                  class="btn text-white bg-[#0E7A81] w-full border-none"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </footer>
+  </body>
+  <script src="./js/index.js"></script>
+</html>
