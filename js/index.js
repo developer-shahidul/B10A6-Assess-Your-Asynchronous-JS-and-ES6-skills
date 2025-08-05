@@ -152,12 +152,12 @@ const displyAnimales = (animales) => {
      />
 </button>
 
-    <button id="disAdapt"  class="adopt-btn py-[9px] px-[16px] border rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2
+    <button id="disAdapt"  class="adopt-btn py-[9px] px-[16px] border rounded-lg text-[#0E7A81] hover:bg-gray-100 focus:outline-none focus:ring-2
      focus:ring-blue-500 transition">Adopt</button>
 
     <button onclick="loadanimalId('${
       animal.petId
-    }')" class="py-[9px] px-[16px] border rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2
+    }')" class="py-[9px] px-[16px] border rounded-lg text-[#0E7A81] hover:bg-gray-100 focus:outline-none focus:ring-2
      focus:ring-blue-500 transition">Details</button>
     </div>
     `;
@@ -226,7 +226,7 @@ const animalLike = (data) => {
   div.className = "h-24";
 
   div.innerHTML = `
-    <img src="${pet.image}" class="w-full h-full object-cover rounded" />
+    <img src="${pet.image}" class="w-full h-full object-contain rounded" />
     `;
   likeContainer.appendChild(div);
 };
@@ -254,7 +254,7 @@ const sortAnimalPrice = () => {
     });
     animleContainer.classList.add("grid");
     // আগে পুরনোগুলো মুছে ফেলো
-    animleContainer.innerHTML = "";
+    animleContainer.innerHTML = "o";
 
     // তারপর নতুনগুলো দেখাও
     displyAnimales(allPets);
@@ -282,7 +282,7 @@ const displayAnimaleDatails = (datails) => {
   const div = document.createElement("div");
   div.innerHTML = `
   <div>
-      <div class="h-80">
+      <div class="h-80 ">
       <img class="h-full w-full object-cover rounded-lg" src="${
         datails.image
       }" alt=""/>
@@ -338,7 +338,7 @@ const displayAnimaleDatails = (datails) => {
        <div class="modal-action justify-center w-full">
               <form method="dialog " class="w-full">
                 <!-- if there is a button in form, it will close the modal -->
-                <button  class="btn w-full bg-[#0E7A8120]">Close</button>
+                <button  class="btn w-full bg-[#0E7A8120] text-[#0E7A81]">Close</button>
               </form>
         </div> 
 </div>
