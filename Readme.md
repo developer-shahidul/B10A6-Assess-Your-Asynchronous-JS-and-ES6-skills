@@ -110,11 +110,32 @@ The following APIs are available in Peddy:
 
 Ensure the final project includes a `README.md` file with the following details:
 
-- Project name.
-- Short description of the project.
+- Project name:Animal-Lovers .
+- Short description of the project:
+
+  PetFinder is a responsive and feature-rich web application designed to simplify the pet adoption process. By fetching real-time data from the "Programming Hero Peddy API," this platform presents a diverse catalog of pets available for adoption. The primary goal of this project is to showcase proficiency in asynchronous JavaScript (Promises, async/await), DOM manipulation, and building a fluid, user-centric interface without relying on any front-end frameworks.
+
 - 5 key features of the project.
-- ES6 features used.
-- Live link to the deployed project.
+
+1. Asynchronous Data Fetching: Seamlessly loads pet categories and detailed pet information from a third-party using the fetch A2. Dynamic Content
+   Rendering: The UI is dynamically generated using JavaScript to display pet categories individual pet cards,ensuring the content is always
+   up-to-date.
+2. Advanced Filtering and Sorting:
+
+   Category Filtering: Users can instantly filter the displayed pets by clicking on a category (e.g., Dog, Cat, Rabbit). Price Sorting: A sorting
+   mechanism allows users to arrange the pets based on their price. Interactive User Experience:
+   Details Modal: Clicking the "Details" button triggers an API call to fetch specific data for a pet and displit in a clean, informative modal
+   window.
+
+3. "Like" Functionality: A "Like" button allows users to add their favorite pets to a separate "Liked Pets" section.
+4. User-Friendly Loaders: Contextual loading spinners are implemented to provide visual feedback durdata-fetching operations,enhancing the user
+   experience.
+5. Responsive and Modern UI: Built with Tailwind CSS, the application is fully responsive, offering an optiviewing experience across all devices,
+   from mobile phones to desktops.
+   Error Handling: The application grac
+
+- ES6 features used :Vanilla JavaScript (ES6+), Fetch API, Promise, async/await, DOM Manipulation.
+- Live link to the deployed project:[live project pleace click here](https://animals-lovers.netlify.app/)
 
 ## What to Submit
 
