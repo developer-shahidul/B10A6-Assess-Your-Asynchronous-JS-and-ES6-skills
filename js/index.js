@@ -354,8 +354,8 @@ const displayAnimaleDatails = (datails) => {
   document.getElementById("my_modal_5").showModal();
 };
 
-const loader = clickedButton.querySelector(".like-loader");
-const icon = clickedButton.querySelector(".like-icon");
+// const loader = clickedButton.querySelector(".like-loader");
+// const icon = clickedButton.querySelector(".like-icon");
 
 // const number = 0;
 // const clockId = setInterval(() => {
