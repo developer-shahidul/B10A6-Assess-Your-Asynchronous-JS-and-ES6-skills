@@ -226,7 +226,7 @@ const animalLike = (data) => {
   div.className = "h-24";
 
   div.innerHTML = `
-    <img src="${pet.image}" class="w-full h-full object-contain rounded" />
+    <img src="${pet.image}" class="w-full h-full object-contain rounded-lg" />
     `;
   likeContainer.appendChild(div);
 };
@@ -254,7 +254,7 @@ const sortAnimalPrice = () => {
     });
     animleContainer.classList.add("grid");
     // আগে পুরনোগুলো মুছে ফেলো
-    animleContainer.innerHTML = "o";
+    animleContainer.innerHTML = "";
 
     // তারপর নতুনগুলো দেখাও
     displyAnimales(allPets);
