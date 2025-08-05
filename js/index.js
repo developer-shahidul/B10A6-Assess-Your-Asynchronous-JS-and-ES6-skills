@@ -23,7 +23,7 @@ const displayCatagories = (item) => {
       " focus:bg-[#0E7A8110] focus:[border-radius:120px] p-6 rounded-lg border h-full w-full flex gap-6 justify-center items-center";
 
     btn.innerHTML = `
-      <img class="category-btn size-14" src="${category.category_icon}" />
+      <img class="category-btn size-14" src="${category.category_icon}" alt="animal-img" />
       <h2 class="text-6 font-bold ">${category.category}</h2>
     `;
 
@@ -109,31 +109,31 @@ const displyAnimales = (animales) => {
     div.innerHTML = `
     <div class="h-[160px mb-6"><img class="h-full w-full object-cover rounded-lg" src="${
       animal.image
-    }" alt="cat"/></div>
+    }" alt="all"/></div>
      <div>
      <h3 class="text-xl font-bold">${animal.pet_name}</h3>
       <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/plumpy/24/deviation.png" alt="dog"/> 
+       src="https://img.icons8.com/plumpy/24/deviation.png" alt="breed-icon"/> 
       <p class="text-base text-[#13131370]">Breed : <span>${
         animal.breed ?? "N/A"
       }</span> </p></div>
 
       <div class="flex gap-2"><img class="size-5 object-cover rounded-lg" 
-      src="https://img.icons8.com/material-outlined/48/calendar--v1.png" alt="rabbit"/>
+      src="https://img.icons8.com/material-outlined/48/calendar--v1.png" alt="birth-icon"/>
        <p class="text-base text-[#13131370]">Birth : <span>${
          animal.date_of_birth ?? "Date unavailable"
        }</span> </p>
        </div>
 
       <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/windows/32/gender.png" alt="bird"/>
+       src="https://img.icons8.com/windows/32/gender.png" alt="gender-icon"/>
        <p class="text-base text-[#13131370]">Gender : <span>${
          animal.gender ?? "Others"
        }</span> </p>
        </div>
 
       <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/material-outlined/48/us-dollar--v1.png" alt=""/> 
+       src="https://img.icons8.com/material-outlined/48/us-dollar--v1.png" alt="doller-icon"/> 
       <p class="text-base text-[#13131370]">Price :  <span>${
         animal.price ?? "Free"
       }</span> 💲 </p></div>
@@ -285,26 +285,26 @@ const displayAnimaleDatails = (datails) => {
       <div class="h-80 ">
       <img class="h-full w-full object-cover rounded-lg" src="${
         datails.image
-      }" alt=""/>
+      }" alt="all-animal-img"/>
       </div>
   <h2 class="text-xl font-bold mb-4">${datails.pet_name}</h2>
   <div class="flex gap-28 my-4">
    <div class="flex flex-col gap-2">
         <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/plumpy/24/deviation.png" alt=""/> 
+       src="https://img.icons8.com/plumpy/24/deviation.png" alt="breed-icon"/> 
       <p class="text-base text-[#13131370]">Breed : <span>${
         datails.breed ?? "N/A"
       }</span>
      </p> 
       </div>  
           <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/windows/32/gender.png" alt=""/>
+       src="https://img.icons8.com/windows/32/gender.png" alt="gender-icon"/>
        <p class="text-base text-[#13131370]">Gender : <span>${
          datails.gender ?? "Others"
        }</span> </p>
        </div>
             <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/windows/32/gender.png" alt=""/>
+       src="https://img.icons8.com/windows/32/gender.png" alt="gender-icon"/>
        <p class="text-base text-[#13131370]">vaccinated_status : <span>${
          datails.vaccinated_status ?? "Others"
        }</span> </p>
@@ -313,13 +313,13 @@ const displayAnimaleDatails = (datails) => {
   
   <div class="flex flex-col gap-2">
        <div class="flex gap-2"><img class="size-5 object-cover rounded-lg" 
-      src="https://img.icons8.com/material-outlined/48/calendar--v1.png" alt=""/>
+      src="https://img.icons8.com/material-outlined/48/calendar--v1.png" alt="birth-icon"/>
        <p class="text-base text-[#13131370]">Birth : <span>${
          datails.date_of_birth ?? "Date unavailable"
        }</span> </p>
        </div>
        <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/material-outlined/48/us-dollar--v1.png" alt=""/> 
+       src="https://img.icons8.com/material-outlined/48/us-dollar--v1.png" alt="doller-icon"/> 
       <p class="text-base text-[#13131370]">Price :  <span>${
         datails.price ?? "Free"
       }💲 </p>
@@ -327,8 +327,8 @@ const displayAnimaleDatails = (datails) => {
       </span> 
      </div>
   </div>
-  
   </div> 
+
   <hr/>
   <div class="py-4">  
  <h2 class="text-base font-semibold mb-3">Details Information</h2>
@@ -342,7 +342,6 @@ const displayAnimaleDatails = (datails) => {
               </form>
         </div> 
 </div>
-
 `;
   datailsButtonContainer.appendChild(div);
   //way 1
