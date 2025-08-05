@@ -92,7 +92,7 @@ const displyAnimales = (animales) => {
     animleContainer.innerHTML = `
     <div class="min-h-[400px] flex flex-col gap-5 justify-center items-center text-center bg-[#13131303] rounded-lg
     ">
-    <img class="size-[155px]" src="./images/error.webp" Alt=""/>
+    <img class="size-[155px]" src="./images/error.webp" Alt="error"/>
 
     <h2 class="text-center text-3xl font-bold">No Information Available</h2>
     <p class="text-base text-[#13131370] lg:w-[760px]">It is a long established fact that a reader will be distracted by the readable content of a page
@@ -109,24 +109,24 @@ const displyAnimales = (animales) => {
     div.innerHTML = `
     <div class="h-[160px mb-6"><img class="h-full w-full object-cover rounded-lg" src="${
       animal.image
-    }" alt=""/></div>
+    }" alt="cat"/></div>
      <div>
      <h3 class="text-xl font-bold">${animal.pet_name}</h3>
       <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/plumpy/24/deviation.png" alt=""/> 
+       src="https://img.icons8.com/plumpy/24/deviation.png" alt="dog"/> 
       <p class="text-base text-[#13131370]">Breed : <span>${
         animal.breed ?? "N/A"
       }</span> </p></div>
 
       <div class="flex gap-2"><img class="size-5 object-cover rounded-lg" 
-      src="https://img.icons8.com/material-outlined/48/calendar--v1.png" alt=""/>
+      src="https://img.icons8.com/material-outlined/48/calendar--v1.png" alt="rabbit"/>
        <p class="text-base text-[#13131370]">Birth : <span>${
          animal.date_of_birth ?? "Date unavailable"
        }</span> </p>
        </div>
 
       <div class="flex gap-2"><img class="size-5 object-cover rounded-lg"
-       src="https://img.icons8.com/windows/32/gender.png" alt=""/>
+       src="https://img.icons8.com/windows/32/gender.png" alt="bird"/>
        <p class="text-base text-[#13131370]">Gender : <span>${
          animal.gender ?? "Others"
        }</span> </p>
