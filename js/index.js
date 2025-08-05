@@ -223,10 +223,10 @@ const animalLike = (data) => {
   // console.log(data.petData);
   const pet = data.petData;
   const div = document.createElement("div");
-  div.className = "h-24";
+  div.className = "h-28";
 
   div.innerHTML = `
-    <img src="${pet.image}" class="w-full h-full object-contain rounded-lg" />
+    <img src="${pet.image}" class="w-full h-full object-cover rounded-lg" />
     `;
   likeContainer.appendChild(div);
 };
