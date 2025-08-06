@@ -57,6 +57,7 @@ const loadCatagoriesName = (name) => {
   // Promise 2: ২ সেকেন্ডের একটি ডিলে তৈরি করা
   const delay = new Promise((resolve) => setTimeout(resolve, 2000)); // 2000ms = 2 সেকেন্ড
 
+  // Promise.all() হল JavaScript-এর একটি powerful utility যেটা একাধিক Promise একসাথে parallel ভাবে run করে এবং সবগুলো resolve হলে রেজাল্ট দেয়।
   // ধাপ ৩: Promise.all() দিয়ে দুটি কাজই শেষ হওয়ার জন্য অপেক্ষা করা
   Promise.all([fetchData, delay])
     .then(([dataResult]) => {
@@ -163,7 +164,7 @@ const displyAnimales = (animales) => {
     `;
     const btn = div.querySelector(".like-btn");
     btn.addEventListener("click", () => {
-      loadpetsId(animal.petId, btn);
+      loadpetsId(animal.petId, btn); // prottek ta animl abong btn a click kora hoice
     });
 
     const adoptBtn = div.querySelector(".adopt-btn"); // ⬅️ adopt button টা খুঁজে আনলাম
@@ -336,9 +337,9 @@ const displayAnimaleDatails = (datails) => {
  
 </div>
        <div class="modal-action justify-center w-full">
-              <form method="dialog " class="w-full">
+              <form method="dialog" class="w-full">
                 <!-- if there is a button in form, it will close the modal -->
-                <button  class="btn w-full bg-[#0E7A8120] text-[#0E7A81]">Close</button>
+                <button   class="btn w-full bg-[#0E7A8120] text-[#0E7A81]">Close</button>
               </form>
         </div> 
 </div>

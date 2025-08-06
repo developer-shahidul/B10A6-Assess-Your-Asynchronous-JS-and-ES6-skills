@@ -11,11 +11,11 @@
       type="text/css"
     />
   </head>
-  <body class="relative">
+  <body>
     <!-- 🔄 Loader Overlay (body-এর ভিতরেই থাকবে) -->
     <div
       id="body-loader"
-      class="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-white"
+      class="fixed w-full h-full z-50 flex items-center justify-center bg-white"
     >
       <span class="loading loading-bars loading-lg text-primary"></span>
     </div>
@@ -23,7 +23,7 @@
       <nav>
         <div class="navbar bg-base-100 justify-around border-b">
           <div class="flex gap-2">
-            <img class="h-6 w-8" src="./images/logo.webp" alt="logo" />
+            <img class="h-6 w-8" src="./images/logo.webp" alt="" />
             <a class="text-xl">Peddy</a>
           </div>
           <div class="hidden md:flex">
@@ -95,11 +95,11 @@
             </p>
             <button class="mt-8 btn">View More</button>
           </div>
-          <div class="mx-auto md:w-[803px] md:h-[450px] mt-12">
+          <div class="mx-auto md:w-[803px] h-[450px] mt-12">
             <img
               class="h-full w-full object-contain"
               src="./images/pet.webp"
-              alt="pet"
+              alt=""
             />
           </div>
         </div>
@@ -137,20 +137,22 @@
       </section>
       <section class="py-8 px-2">
         <!-- all animale container  -->
-        <div class="grid grid-cols-4 md:gap-6 gap-1 items-start">
+        <div class="grid gap-3 grid-cols-12">
           <!-- animale contenst  -->
-          <div
-            id="animale-container"
-            class="col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-[860px] w-full overflow-scroll rounded-xl border"
-          >
-            <!-- Loader flex dite hobe -->
+
+          <div class="col-span-9 max-h-screen overflow-hidden overflow-y-auto">
+            <div
+              id="animale-container"
+              class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2"
+            >
+              <!-- Loader flex dite hobe -->
+            </div>
           </div>
 
-          <!-- //like container  -->
-          <div
-            id="like-animale"
-            class="col-span-1 grid grid-cols-1 md:grid-cols-2 gap-4 border rounded-xl h-[860px] w-full overflow-scroll"
-          ></div>
+          <div class="col-span-3 max-h-screen overflow-hidden overflow-y-auto">
+            <!-- //like container  -->
+            <div id="like-animale" class="grid grid-cols-2 gap-3"></div>
+          </div>
         </div>
       </section>
 
@@ -179,7 +181,7 @@
             <img
               class="size-14 mx-auto"
               src="https://img.icons8.com/?size=100&id=kRZicCB1E8B8&format=png&color=000000"
-              alt="handshak-icon"
+              alt=""
             />
             <h1 class="text-primary text-3xl font-bold">CONGREATS</h1>
             <h2 class="text-primary text-xl">
@@ -201,7 +203,7 @@
       >
         <nav>
           <div class="footer-title flex gap-3">
-            <img class="w-7 h-6" src="./images/logo.webp" alt="logo" /><span
+            <img class="w-7 h-6" src="./images/logo.webp" alt="" /><span
               >Peddy</span
             >
           </div>
@@ -269,8 +271,8 @@
         </nav>
         <nav>
           <h6 class="footer-title">Useful Links</h6>
-          <a class="link link-hover">Home</a>
-          <a class="link link-hover">About Us</a>
+          <a class="link link-hover"> Home</a>
+          <a class="link link-hover"> About Us</a>
           <a class="link link-hover">Animals</a>
           <a class="link link-hover">Foundation</a>
           <a class="link link-hover">Contact</a>
