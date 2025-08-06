@@ -140,18 +140,19 @@
         <div class="grid gap-3 grid-cols-12">
           <!-- animale contenst  -->
 
-          <div class="col-span-9 max-h-screen overflow-hidden overflow-y-auto">
-            <div
-              id="animale-container"
-              class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2"
-            >
-              <!-- Loader flex dite hobe -->
-            </div>
+          <div
+            id="animale-container"
+            class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 col-span-9 h-[800px] border rounded-lg overflow-y-scroll"
+          >
+            <!-- Loader flex dite hobe -->
           </div>
 
-          <div class="col-span-3 max-h-screen overflow-hidden overflow-y-auto">
-            <!-- //like container  -->
-            <div id="like-animale" class="grid grid-cols-2 gap-3"></div>
+          <!-- //like container  -->
+          <div class="border rounded-lg h-[800px] col-span-3 overflow-y-scroll">
+            <div
+              id="like-animale"
+              class="grid grid-cols-1 md:grid-cols-2 gap-3"
+            ></div>
           </div>
         </div>
       </section>

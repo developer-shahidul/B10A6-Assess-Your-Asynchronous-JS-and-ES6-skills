@@ -91,7 +91,7 @@ const displyAnimales = (animales) => {
   if (!animales || animales.length === 0) {
     animleContainer.classList.remove("grid");
     animleContainer.innerHTML = `
-    <div class="min-h-[400px] flex flex-col gap-5 justify-center items-center text-center bg-[#13131303] rounded-lg
+    <div class="h-full w-full flex flex-col gap-5 justify-center items-center text-center bg-[#13131303] rounded-lg
     ">
     <img class="size-[155px]" src="./images/error.webp" Alt="error"/>
 
